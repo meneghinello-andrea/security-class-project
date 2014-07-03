@@ -3,6 +3,7 @@
 *.log
 *.out
 *.toc
+*.synctex.gz
 
 #File di testo
 *.txt
