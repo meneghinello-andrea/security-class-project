@@ -1,0 +1,11 @@
+#File di compilazione TEX
+*.aux
+*.log
+*.out
+*.toc
+
+#File di testo
+*.txt
+
+#Eseguibili
+*.pdf
