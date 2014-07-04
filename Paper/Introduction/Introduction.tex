@@ -11,7 +11,7 @@ In addiction in today's networks these limitation were found: (a) complexity tha
 For this reasons, companies and researchers propose \ac{SDN}, a different way to view network architecture.
 
 \section*{\small \textsc{\ac{SDN} and OpenFlow overview}}
-In \ac{SDN} architecture there is a clear separation between the \ac{CP}, where the decision are taken, and the \ac{DP}, where data flows. This separation led independence by single vendor and one single, logic, point where the decision are taken; these simplify the network design and management.
+In \ac{SDN} architecture (shown in figure \ref{fig:sdn-and-openflow-overview:sdn-structure}) there is a clear separation between the \ac{CP}, where the decision are taken, and the \ac{DP}, where data flows. This separation led independence by single vendor and one single, logic, point where the decision are taken; these simplify the network design and management.
 
 The \ac{CP} is simply programmable with a higher level of abstraction and as result the network appears to application as a single point of exchange.
 \ac{SDN} expected \ac{API} that allow the implementation of network services like: routing, multicast, security, access control, bandwidth management, traffic engineering, \ac{QoS} and energy management.
@@ -29,3 +29,9 @@ When a packet arrives the devices try to match it with the flows present in the 
 The instruction set can include operation witch the forward of a packet, modify a field in the packet, group table processing (used for complex operation like multicast) and pipeline processing. In pipeline processing the packet is forwarded to a next flow table and with it the protocol can exchange some information in the form of meta data.
 
 The network flows can be forwarded to a physical or virtual port (the virtual ports are used for internal management) or to a group table where are applied, to the packet, rules more complex like multicast or reroute fast.
+
+\begin{figure}
+\includegraphics[scale=0.5]{Introduction/Image/SDNStructure.png}
+\caption{\ac{SDN} structure}
+\label{fig:sdn-and-openflow-overview:sdn-structure}
+\end{figure}
