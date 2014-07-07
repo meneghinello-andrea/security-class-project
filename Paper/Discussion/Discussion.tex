@@ -1,0 +1,45 @@
+%-------------------------------------------------------
+% Discussion.tex
+%
+% This document contains the discussion about SDN and
+% OpenFlow security of the paper
+%-------------------------------------------------------
+\section*{\small \textsc{security analysis}}
+The basic properties of a secure communications network are: confidentiality, integrity, availability of information, authentication and non repudiation. If one or more properties miss the communication can not be considered secure.
+
+In the \ac{SDN} network coexist the old attack surfaces like router and switch with its weakness and new attack surfaces like the \ac{CP} and the virtual infrastructure.
+
+This network architecture suffer for \ac{DoS} attacks that can compromise the entire network. Indeed the default behaviour of \ac{SDN} network is to deliver to the controller packets that no match with any flow table entry and for an attacker is quite simply to deliver packet with field that no match with any flow table entry.
+
+Another major problem is to consider secure the communication channel between the 	\ac{CP} and the \ac{DP}. The OpenFlow switch specification \cite{onf:openflow-spec} describe the use of \ac{TLS} with the mutual authentication between the controllers and the switches. However, the security features is optional, and the standard of \ac{TLS} is not specified. The lack of \ac{TLS} adoption by major vendors and the possibility of \ac{DoS} attacks are the focus of an OpenFlow vulnerability assessments \cite{acm:openflow-vulnerability}. The authors found that the lack of \ac{TLS} use could lead to fraudulent rule insertion or modification.
+
+In \cite{sdn-openflow-security} authors show a comprehensive table with different attack type and the \ac{SDN} layer that suffer for the specific threat. The control and data layers are identified in the table as clear targets of attack. This reflects the main distinctions between the traditional network and the \ac{SDN}; that of the centralized control element and the altered data path elements to support programmability.
+
+\section*{\small \textsc{security enhancement using \ac{SDN}}}
+The architecture of \ac{SDN} introduces potential for innovation in the use of the network. The combination of the global view of the network and the network programmability supports process of harvesting intelligence informations from existing \ac{IDS} and \ac{IPS}. For example, followed by analysis of \ac{IDS}/\ac{IPS} the \ac{CP} can reprogramming the network policy. This approach can render the \ac{SDN} more robust to malicious attack than traditional network.
+
+In \cite{sdn-and-openflow-from-concept-to-implementation:NICE} they talk about a module called \ac{NICE} running on each server with a low overhead. This module is composed by two phases: (a) \ac{NICE}-A and (b) \ac{DPI}. The \ac{NICE}-A phase is agent intrusion detection that scan and update the \ac{SAG}. The \ac{DPI} phase is activated when the \ac{VM} enters in ``inspection state'' and use the \ac{SAG} to found imminent threat and vulnerabilities. The necessity of a different way to do inspection is motivated by the conventional regimes do not work very well in cloud data centres.
+
+The \ac{SDN} architecture simplifies the hardware operations but it also brings single point security issues: once the controller is attacked, all low level switches are mislead and cannot correctly deliver the packets. To solve this threat, Seugwon Shin at al in \cite{fresco-services}, introduces a security application development framework. The framework, shown in figure \ref{fig:security-enhancement-using-SDN:FRESCO},
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Introduction/Image/FrescoStructure.png}
+\caption{FRESCO: a high level overview}
+\label{fig:security-enhancement-using-SDN:FRESCO}
+\end{figure}
+
+is composed by 16 libraries that allow the users write security application. It execute operation like: simple block of addresses or dynamic quarantine or reflect remote scanner in a ``honey net''. The reasons that led to the birth of FRESCO are: (a) a concept known as ``\ac{IDC}'', the controllers do not track information for network security but FRESCO has a \ac{DB} for such data; (b) incorporates an architectural design that is modular inspired by the click router; (c) product some alerts in response of a malicious combination of network flow.
+
+In \cite{sdn-anomaly-traffic-detection} the authors propose different OpenFlow algorithm for anomaly traffic detection. They evaluate all the algorithm in home and business networks. In the following I summarize their ideas.
+
+(1) Threshold Random Walk with Credit Based Rate Limiting (TRW-CB) algorithm: As we know, a TCP connection can be established in a much higher success rate if the server is not attacked. By using sequential hypothesis testing (i.e. likelihood ratio test), it analyses each connection status and attempt to detect the worm infections.
+
+(2) Rate-Limiting: A virus infection can cause many connection request within very short time, while a benign traffic flow will never have such a high request rate. This is the principle of rate-limiting, that is, they check the request rate and detect a malicious event.
+
+(3) Maximum Entropy Detector: Maximum entropy calculations can be used to find traffic statistical features. By using a baseline distribution, maximum entropy model can be used to classify the packets into different categories, and each category could be detected as benign or abnormal.
+
+(4) NETAD: It acts like a firewall or filter. It simply scans the packet header and blocks any suspicious packet based on the packet attributions.
+
+\section*{\small \textsc{discussion}}
+TODO
