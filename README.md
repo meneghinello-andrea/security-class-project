@@ -7,6 +7,7 @@ Piccola indagine su cosa siano le reti SDN ed il protocollo OpenFlow ed illustra
 ==========
 
 Infomrmazioni di compilazione del documento
+
 Il documento è scritto interamente utilizzando latex. Per poter ottenere una copia in formato PDF posizionarsi, con la shell all'interno della cartella che contiene il file ''MasterDocument.tex'' e lanciare i seguenti comandi:
 
 1) pdflatex MasterDocument		-> Questo comando genererà una prima versione del documento e si accorgerà della mancanza dei riferimenti
