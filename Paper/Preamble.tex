@@ -10,7 +10,13 @@
 \usepackage{acronym}
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks, pdftex,
+            pdfauthor={Andrea Meneghinello},
+            pdftitle={SDN and OpenFlow security: a survey},
+            pdfsubject={Essay for course in network security},
+            pdfkeywords={essay,survey,network security,SDN,OpenFlow},
+            pdfproducer={Latex},
+            pdfcreator={pdflatex}]{hyperref}
 \usepackage[babel]{csquotes}
 \usepackage[style=numeric,useprefix,hyperref,backend=bibtex]{biblatex}
 \usepackage[T1]{fontenc}
@@ -43,8 +49,13 @@
 \acrodef{IDS}[IDS]{Intrusion Detection System}
 \acrodef{IPS}[IPS]{Intrusion Prevention System}
 \acrodef{IT}[IT]{Information Technology}
+\acrodef{ONF}[ONF]{Open Network Foundation}
 \acrodef{QoS}[QoS]{Quality of Service}
 \acrodef{SAG}[SAG]{Scenario Attack Graph}
 \acrodef{SDN}[SDN]{Software Defined Network}
 \acrodef{TLS}[TLS]{Transport Layer Security}
 \acrodef{VM}[VM]{Virtual Machines}
+
+
+%Macro definitions
+\newcommand{\component}[1]{\textit{#1}}
