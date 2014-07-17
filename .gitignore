@@ -9,6 +9,8 @@
 *.blg
 *.run.xml
 *-blx.bib
+*.nav
+*.snm
 
 #File di testo
 *.txt
