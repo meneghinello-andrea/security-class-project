@@ -9,7 +9,7 @@
 \addtocounter{framenumber}{-1}
 }
 
-\begin{frame}{SDN Overview \small{1/3}}
+\begin{frame}{SDN Overview \small{1/4}}
 SDN architecture is composed by:
 \begin{figure}
 \includegraphics[scale=0.45]{Immagini/SDNStructure.png}
@@ -18,15 +18,39 @@ SDN architecture is composed by:
 \end{figure}
 \end{frame}
 
-\begin{frame}{OpenFlow switch Overview \small{2/3}}
+\begin{frame}{OpenFlow switch: \small{Overview 2/4}}
+\begin{columns}
+\begin{column}{0.55\textwidth}
+An OpenFlow switch is composed by:
+\begin{itemize}
+\item<2-> secure channel
+\item<3-> flow tables
+\item<4-> group table
+\end{itemize}
+\end{column}
+\begin{column}{0.45\textwidth}
 \begin{figure}
-\includegraphics[scale=0.45]{Immagini/OpenFlowSwitch.png}
+\includegraphics[scale=0.50]{Immagini/OpenFlowSwitch.png}
 \caption{OpenFlow switch}
 \label{fig:OpenFlowSwitchComponent}
 \end{figure}
+\end{column}
+\end{columns}
 \end{frame}
 
-\begin{frame}{OpenFlow switch pipeline \small{3/3}}
+\begin{frame}{OpenFlow switch: \small{defualt configuration 3/4}}
+The default behavior can be:
+\begin{itemize}
+\item<2-> drop the packet
+\item<3-> send the packet to SDN controller
+\item<4-> enable pipeline procedure
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.25]{Immagini/OpenFlowSwitchRouter.jpg}
+\end{figure}
+\end{frame}
+
+\begin{frame}{OpenFlow switch: \small{pipeline 4/4}}
 \begin{figure}
 \includegraphics[scale=0.45]{Immagini/OpenFlowPipeline.png}
 \caption{OpenFlow switch pipeline}
@@ -40,7 +64,7 @@ Using SDN with OpenFlow in network management there are benefits, like:
 \begin{itemize}
 \item<2-> centralized control of routers/switches multi vendor
 \item<3-> reduction of complexity through automation
-\item<4-> an high rate of innovation
-\item<5-> high level of reliability and a more granular level of control of entire network
+\item<4-> an high level of reliability
+\item<5-> a more granular level of control of entire network
 \end{itemize}
 \end{frame}
